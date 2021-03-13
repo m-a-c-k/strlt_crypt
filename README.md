@@ -4,7 +4,7 @@
 #### Dependencies
 python 3.6+
 
-numpy
+numpy  
 `pip install numpy`
   
   
