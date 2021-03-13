@@ -1,1 +1,5 @@
-# strlt_crypt
+# Crypto with Streamlit
+
+
+#### Dependencies
+`pip install streamlit`
