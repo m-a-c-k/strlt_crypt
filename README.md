@@ -2,5 +2,8 @@
 
 
 #### Dependencies
-`python3.9+`  
-`pip install streamlit`
+python 3.6+
+  
+  
+streamlit  
+  `pip install streamlit`
