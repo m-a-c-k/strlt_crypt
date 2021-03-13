@@ -3,6 +3,9 @@
 
 #### Dependencies
 python 3.6+
+
+numpy
+`pip install numpy`
   
   
 streamlit  
