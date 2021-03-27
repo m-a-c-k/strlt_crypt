@@ -8,7 +8,7 @@ python 3.6+
 `pip install numpy`  
 
 ### cbpro  
-`pip nstall cbpro`
+`pip install cbpro`
 
 ### pandas  
 `pip install pandas`  
