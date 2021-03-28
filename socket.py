@@ -2,8 +2,9 @@ import numpy as np
 import datetime as dt
 import cbpro, time, websocket, json
 import pandas as pd
-import dateutil
 import streamlit as st
+import dateutil
+
 
 ################################ API ###############################
 
@@ -23,11 +24,11 @@ try:
     for i in accnts:
         bal = float(i['balance'])
         if (bal> 0.0000001):
-            st.write("\n{} : {}\n-----".format(i['currency'], round(bal,10)))
+            print("\n{} : {}\n-----".format(i['currency'], round(bal,10)))
 
 except:
-    st.error("error encountered")
-    
+    #st.error("error encountered")
+    print("error")
 ####################################################################
 
 
@@ -40,7 +41,7 @@ def on_open(ws):
             {
                 "name":"ticker",
                 "product_ids": [
-                    "BTC-USD"
+                    "ALGO-USD"
                 ]
             }
         ]
@@ -54,12 +55,12 @@ def on_message(ws, message):
     current_tick=json.loads(message)
     previous_tick = current_tick
 
-    st.write(" ==== received tick ==== ")
+    print("\n ==== received tick ==== ")
 
     tick_datetime_object = dateutil.parser.parse(current_tick['time'])
     tick_dt = tick_datetime_object.strftime("%m/%d/%Y %H:%M")
-    st.write("min: ",tick_datetime_object.minute)
-    st.write("{}  @  {}".format(tick_dt, current_tick['price']))
+    print("min: ",tick_datetime_object.minute)
+    print("{}  @  {}".format(tick_dt, current_tick['price']))
     time.sleep(5)
 
     
